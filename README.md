@@ -1,79 +1,75 @@
 # Solar_panels_tracker
 
-⸻
+# 🌞 Solar Panels Tracker | نظام تتبع الألواح الشمسية
 
-Solar Panel Tracking System
+An **AI Agent** built with **n8n** that autonomously controls solar panel angles based on real-time sun position and weather data — no human intervention needed.
 
-An intelligent AI-based system built using n8n that automatically adjusts solar panel angles according to real-time solar position and weather conditions, without requiring human control.
+وكيل ذكاء اصطناعي مبني على **n8n** يتحكم تلقائياً في زاوية الألواح الشمسية بناءً على موقع الشمس والطقس في الوقت الفعلي.
 
-⸻
+-----
 
-What is an AI Agent?
+## 🤖 What is an AI Agent? | ما هو الوكيل الذكي؟
 
-An AI Agent is a system designed to operate independently by performing three main tasks:
+An AI Agent is a system that:
 
-* Monitoring: Collects environmental data such as sunlight intensity and weather conditions
-* Processing: Determines the most efficient angle for the solar panels
-* Execution: Adjusts the panel position automatically based on the decision
+- **Perceives** its environment (weather & solar data)
+- **Decides** the best action (optimal panel angle)
+- **Acts** autonomously (adjusts panels automatically)
 
-In simple terms: it senses, decides, and acts.
+الوكيل الذكي هو نظام يستشعر بيئته، يتخذ قرارات، ويتصرف تلقائياً.
 
-⸻
+-----
 
-Technologies Used
+## 🔧 Built With | التقنيات المستخدمة
 
-Tool	Role
-n8n	Automates the workflow of the AI system
-Open-Meteo API	Provides real-time weather and solar data
-Node.js	Handles calculations and data processing
+|Tool              |Purpose                       |
+|------------------|------------------------------|
+|**n8n**           |AI Agent workflow automation  |
+|**Open-Meteo API**|Real-time weather & solar data|
+|**Node.js**       |Data processing & calculations|
 
-⸻
+-----
 
-Project Location
+## 📍 Location | الموقع
 
-Al Kharj, Saudi Arabia
-Coordinates: (24.1556, 47.3346)
+**Al Kharj, Saudi Arabia** (Lat: 24.1556, Lon: 47.3346)
 
-⸻
+-----
 
-System Workflow
+## ⚙️ How the Agent Works | كيف يعمل الوكيل
 
-Weather API → n8n AI Agent → Decision Process → Panel Adjustment
-       ↑                                         ↓
-   Environmental Data        Optimal Angle or Stop (if wind is high)
+```
+[Open-Meteo API] → [n8n Agent] → [Decision] → [Panel Adjustment]
+      ↑                                              ↓
+  Weather Data         Optimal Angle / Stop if Wind > 50 km/h
+```
 
-Process Steps:
+1. **Sense** — n8n fetches real-time solar radiation & wind speed
+1. **Think** — Agent calculates optimal panel elevation angle
+1. **Act** — Adjusts panel angle or stops movement for safety
 
-1. Data Collection
-    The system retrieves solar radiation and wind speed data
-2. Decision Making
-    The agent calculates the optimal tilt angle for the panels
-3. Action Execution
-    The panels are adjusted, or movement is stopped if conditions are unsafe
+-----
 
-⸻
+## 🧮 Agent Decision Logic | منطق القرار
 
-Decision Logic
+```javascript
+// If radiation exists → calculate angle
+elevation = radiation > 0 ? Math.min(90, radiation / 10) : 0
 
-// Calculate panel angle
-angle = radiation > 0 ? Math.min(90, radiation / 10) : 0;
-// Safety condition
-if (windSpeed > 50) {
-  stopPanels = true;
-}
+// Safety rule → stop if wind is too strong
+if (windSpeed > 50) → stopPanels = true
+```
 
-⸻
+-----
 
-Safety Feature
+## 🛑 Safety Feature | ميزة الأمان
 
-If wind speed exceeds 50 km/h, the system automatically stops panel movement to prevent potential damage.
+If wind speed > 50 km/h → Agent automatically stops panels to prevent damage.
 
-⸻
+-----
 
-Requirements
+## 📦 Requirements | المتطلبات
 
-* n8n (self-hosted or cloud)
-* Open-Meteo API (free, no API key required)
-* Node.js
-
-⸻
+- n8n (self-hosted or cloud)
+- Open-Meteo API (free, no key required)
+- Node.js
