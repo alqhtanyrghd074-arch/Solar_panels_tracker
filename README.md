@@ -1,26 +1,25 @@
 # Solar_panels_tracker
 
-# 🌞 Solar Panels Tracker | نظام تتبع الألواح الشمسية
+#  Solar Panels Tracker | نظام تتبع الألواح الشمسية
 
 An **AI Agent** built with **n8n** that autonomously controls solar panel angles based on real-time sun position and weather data — no human intervention needed.
 
-وكيل ذكاء اصطناعي مبني على **n8n** يتحكم تلقائياً في زاوية الألواح الشمسية بناءً على موقع الشمس والطقس في الوقت الفعلي.
+
 
 -----
 
-## 🤖 What is an AI Agent? | ما هو الوكيل الذكي؟
-
+## 🤖 What is an AI Agent? 
 An AI Agent is a system that:
 
 - **Perceives** its environment (weather & solar data)
 - **Decides** the best action (optimal panel angle)
 - **Acts** autonomously (adjusts panels automatically)
 
-الوكيل الذكي هو نظام يستشعر بيئته، يتخذ قرارات، ويتصرف تلقائياً.
+
 
 -----
 
-## 🔧 Built With | التقنيات المستخدمة
+## 🔧 Built With 
 
 |Tool              |Purpose                       |
 |------------------|------------------------------|
@@ -30,13 +29,13 @@ An AI Agent is a system that:
 
 -----
 
-## 📍 Location | الموقع
+## 📍 Location 
 
 **Al Kharj, Saudi Arabia** (Lat: 24.1556, Lon: 47.3346)
 
 -----
 
-## ⚙️ How the Agent Works | كيف يعمل الوكيل
+## ⚙️ How the Agent Works 
 
 ```
 [Open-Meteo API] → [n8n Agent] → [Decision] → [Panel Adjustment]
@@ -50,7 +49,7 @@ An AI Agent is a system that:
 
 -----
 
-## 🧮 Agent Decision Logic | منطق القرار
+## 🧮 Agent Decision Logic 
 
 ```javascript
 // If radiation exists → calculate angle
@@ -62,13 +61,13 @@ if (windSpeed > 50) → stopPanels = true
 
 -----
 
-## 🛑 Safety Feature | ميزة الأمان
+## 🛑 Safety Feature 
 
 If wind speed > 50 km/h → Agent automatically stops panels to prevent damage.
 
 -----
 
-## 📦 Requirements | المتطلبات
+## 📦 Requirements 
 
 - n8n (self-hosted or cloud)
 - Open-Meteo API (free, no key required)
